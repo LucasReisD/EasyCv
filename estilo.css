@@ -1,0 +1,357 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(
+    to bottom,
+    #3d41ff,
+    #70cff5f3,
+    rgba(175, 255, 215, 0.74)
+  );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+
+}
+
+.logo {
+display: flex;
+justify-content: center;
+margin-bottom: 15px;
+
+}
+
+.logo img {
+ width: 120px;
+ height: auto;
+ display: block;
+
+}
+
+.app {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    position: relative;
+    min-height: 95vh;
+}
+
+
+.tela {
+    display: none;
+    padding: 30px 20px;
+    animation: fadeIn 0.3s;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.topo {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #1a73e8, #0d904f);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 12px rgba(26,115,232,0.3);
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.vantagens {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.item {
+    background: #f8f9fa;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.icone {
+    font-size: 20px;
+}
+
+.rodape {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* === BOTÕES === */
+.botao {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.botao:active {
+    transform: scale(0.97);
+}
+
+.botao-principal {
+    background: #1a73e8;
+    color: white;
+    box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+}
+
+.botao-principal:hover {
+    background: #1557b0;
+}
+
+.botao-limpar {
+    background: #f1f3f4;
+    color: #555;
+    flex: 1;
+}
+
+.botao-pdf {
+    background: #0d904f;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.botao-editar {
+    background: #e8f0fe;
+    color: #1a73e8;
+    margin-bottom: 8px;
+}
+
+.botao-novo {
+    background: #f1f3f4;
+    color: #555;
+}
+
+/* === FORMULÁRIO === */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.btn-voltar {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #1a73e8;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.secao {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e8e8e8;
+}
+
+.secao h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+    margin-top: 12px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: 0.2s;
+    background: white;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.botoes-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* === RESULTADO === */
+.cabecalho-resultado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cabecalho-resultado h2 {
+    font-size: 22px;
+    color: #333;
+}
+
+.curriculo-papel {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Estilo do currículo gerado */
+.curriculo-papel .nome-cv {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.curriculo-papel .contato-cv {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #1a73e8;
+}
+
+.curriculo-papel .resumo-cv {
+    background: #f0f7ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    border-left: 3px solid #1a73e8;
+}
+
+.curriculo-papel .titulo-secao {
+    font-weight: 700;
+    color: #1a73e8;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.curriculo-papel ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.curriculo-papel li {
+    margin-bottom: 3px;
+    color: #444;
+}
+
+.botoes-resultado {
+    margin-top: 10px;
+}
+
+
+@media (max-width: 400px) {
+    .tela {
+        padding: 20px 15px;
+    }
+    
+    .secao {
+        padding: 15px;
+    }
+}
+
+/*impressão/PDF */
+@media print {
+    body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .app {
+        box-shadow: none !important;
+        max-width: 100% !important;
+        background: white !important;
+    }
+    
+    .botao, .botoes-resultado, .btn-voltar, .cabecalho, .cabecalho-resultado {
+        display: none !important;
+    }
+    
+    .tela {
+        display: block !important;
+        padding: 0 !important;
+        animation: none !important;
+    }
+    
+    .curriculo-papel {
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+}

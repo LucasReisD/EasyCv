@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Fácil</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="app">
+        
+        <!-- Tela 1 - Boas vindas -->
+        <div id="telaInicio" class="tela ativa">
+            <div class="topo">
+                <div class="logo"><img src="IMG-20260603-WA0022.jpg" alt="LogoCV"></div>
+                <h1>Currículo Fácil</h1>
+                <p class="descricao">Crie seu currículo profissional em poucos minutos.</p>
+            </div>
+            
+            <div class="vantagens">
+                <div class="item">
+                    <span class="icone">✍️</span>
+                    <span>Preenchimento rápido</span>
+                </div>
+                <div class="item">
+                    <span class="icone">📄</span>
+                    <span>Download em PDF</span>
+                </div>
+                <div class="item">
+                    <span class="icone">📱</span>
+                    <span>Funciona no celular</span>
+                </div>
+            </div>
+            
+            <button class="botao botao-principal" onclick="irParaFormulario()">
+                Começar Agora
+            </button>
+            
+            <p class="rodape">Projeto universitário • 2024</p>
+        </div>
+        
+        <!-- Tela 2 - Formulário -->
+        <div id="telaFormulario" class="tela">
+            <div class="cabecalho">
+                <button class="btn-voltar" onclick="voltarInicio()">← Voltar</button>
+                <h2>Seus Dados</h2>
+            </div>
+            
+            <form id="formCurriculo" onsubmit="gerarCurriculo(event)">
+                
+                <!-- Dados Pessoais -->
+                <div class="secao">
+                    <h3>👤 Dados Pessoais</h3>
+                    
+                    <label>Nome completo *</label>
+                    <input type="text" id="nome" placeholder="Seu nome completo" required>
+                    
+                    <label>E-mail *</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                    
+                    <label>Telefone *</label>
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+                    
+                    <label>Cidade/Estado *</label>
+                    <input type="text" id="cidade" placeholder="Fortaleza - CE" required>
+                </div>
+                
+                <!-- Formação -->
+                <div class="secao">
+                    <h3>🎓 Formação</h3>
+                    
+                    <label>Curso *</label>
+                    <input type="text" id="curso" placeholder="Ex: Ciência da Computação" required>
+                    
+                    <label>Semestre (opcional)</label>
+                    <input type="text" id="semestre" placeholder="Ex: 3º semestre">
+                </div>
+                
+                <!-- Objetivo e Habilidades -->
+                <div class="secao">
+                    <h3>🎯 Objetivo e Habilidades</h3>
+                    
+                    <label>Objetivo profissional *</label>
+                    <textarea id="objetivo" placeholder="Ex: Busco oportunidade na área de..." rows="3" required></textarea>
+                    
+                    <label>Habilidades *</label>
+                    <textarea id="habilidades" placeholder="Separe por vírgula...&#10;Ex: Excel, HTML, comunicação" rows="3" required></textarea>
+                </div>
+                
+                <!-- Extras -->
+                <div class="secao">
+                    <h3>📚 Cursos e Experiência</h3>
+                    
+                    <label>Cursos complementares</label>
+                    <textarea id="cursos" placeholder="Ex: Informática básica, Inglês..." rows="2"></textarea>
+                    
+                    <label>Experiência profissional</label>
+                    <textarea id="experiencia" placeholder="Se não tiver, deixe em branco..." rows="2"></textarea>
+                </div>
+                
+                <div class="botoes-form">
+                    <button type="button" class="botao botao-limpar" onclick="limparTudo()">
+                        Limpar
+                    </button>
+                    <button type="submit" class="botao botao-principal">
+                        Gerar Currículo
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+        
+        <!-- Tela 3 - Resultado -->
+        <div id="telaResultado" class="tela">
+            <div class="cabecalho-resultado">
+                <h2>Currículo Pronto!</h2>
+            </div>
+            
+            <div id="curriculoGerado" class="curriculo-papel">
+                <!-- O currículo aparece aqui -->
+            </div>
+            
+            <div class="botoes-resultado">
+                <button class="botao botao-pdf" onclick="baixarPDF()">
+                    📥 Baixar PDF
+                </button>
+                <button class="botao botao-editar" onclick="editarDados()">
+                    ✏️ Editar
+                </button>
+                <button class="botao botao-novo" onclick="novoCurriculo()">
+                    🔄 Novo Currículo
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
