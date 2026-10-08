@@ -1,143 +1,1108 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Fácil</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EasyCV — crie um currículo profissional de forma simples, rápida e elegante."
+    >
+
+    <title>EasyCV — Crie um currículo que abre portas</title>
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="estilo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <div class="app">
-        
-        <!-- Tela 1 - Boas vindas -->
-        <div id="telaInicio" class="tela ativa">
-            <div class="topo">
-                <div class="logo"><img src="IMG-20260603-WA0022.jpg" alt="LogoCV"></div>
-                <h1>Currículo Fácil</h1>
-                <p class="descricao">Crie seu currículo profissional em poucos minutos.</p>
-            </div>
-            
-            <div class="vantagens">
-                <div class="item">
-                    <span class="icone">✍️</span>
-                    <span>Preenchimento rápido</span>
-                </div>
-                <div class="item">
-                    <span class="icone">📄</span>
-                    <span>Download em PDF</span>
-                </div>
-                <div class="item">
-                    <span class="icone">📱</span>
-                    <span>Funciona no celular</span>
-                </div>
-            </div>
-            
-            <button class="botao botao-principal" onclick="irParaFormulario()">
-                Começar Agora
+
+    <!-- =========================
+         LANDING PAGE
+    ========================== -->
+
+    <div id="landingPage">
+
+        <header class="site-header">
+
+            <a href="#" class="brand">
+                <img
+                    src="assets/logo.svg"
+                    alt="EasyCV"
+                    class="brand-logo"
+                >
+            </a>
+
+            <nav class="header-nav">
+                <a href="#como-funciona">Como funciona</a>
+                <a href="#recursos">Recursos</a>
+            </nav>
+
+            <button
+                class="header-action"
+                id="startHeaderButton"
+            >
+                Criar currículo
+                <span>→</span>
             </button>
-            
-            <p class="rodape">Projeto universitário • 2026</p>
-        </div>
-        
-        <!-- Tela 2 - Formulário -->
-        <div id="telaFormulario" class="tela">
-            <div class="cabecalho">
-                <button class="btn-voltar" onclick="voltarInicio()">← Voltar</button>
-                <h2>Seus Dados</h2>
+
+        </header>
+
+
+        <main>
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span></span>
+                        Currículos profissionais, sem complicação
+                    </div>
+
+                    <h1>
+                        Crie um currículo
+                        <strong>que abre portas.</strong>
+                    </h1>
+
+                    <p>
+                        Organize sua experiência, destaque suas habilidades
+                        e tenha um currículo profissional pronto para enviar.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <button
+                            class="primary-button"
+                            id="startHeroButton"
+                        >
+                            Criar meu currículo
+                            <span>→</span>
+                        </button>
+
+                        <a
+                            href="#como-funciona"
+                            class="secondary-button"
+                        >
+                            Ver como funciona
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div>
+                            <span>✓</span>
+                            Grátis
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Sem cadastro
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            PDF pronto para enviar
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- COMO FUNCIONA -->
+
+            <section
+                class="info-section"
+                id="como-funciona"
+            >
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        COMO FUNCIONA
+                    </span>
+
+                    <h2>
+                        Seu currículo em poucos passos.
+                    </h2>
+
+                    <p>
+                        Preencha suas informações e acompanhe
+                        o resultado enquanto cria.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <article class="info-card">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Preencha
+                        </h3>
+
+                        <p>
+                            Adicione suas informações pessoais,
+                            formação, experiência e habilidades.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Revise
+                        </h3>
+
+                        <p>
+                            Veja seu currículo sendo atualizado
+                            em tempo real enquanto você preenche.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Baixe
+                        </h3>
+
+                        <p>
+                            Quando estiver satisfeito,
+                            gere sua versão pronta para PDF.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECURSOS -->
+
+            <section
+                class="features-section"
+                id="recursos"
+            >
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        EASYCV
+                    </span>
+
+                    <h2>
+                        Simples por fora.<br>
+                        Completo por dentro.
+                    </h2>
+
+                </div>
+
+
+                <div class="feature-list">
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Preview em tempo real
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Salvamento automático
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Layout profissional
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Compatível com celular
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Exportação para PDF
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer class="site-footer">
+
+            <div class="footer-inner">
+
+                <img
+                    src="assets/logo.svg"
+                    alt="EasyCV"
+                    class="footer-logo"
+                >
+
+                <span>
+                    Crie. Revise. Conquiste.
+                </span>
+
             </div>
-            
-            <form id="formCurriculo" onsubmit="gerarCurriculo(event)">
-                
-                <!-- Dados Pessoais -->
-                <div class="secao">
-                    <h3>👤 Dados Pessoais</h3>
-                    
-                    <label>Nome completo *</label>
-                    <input type="text" id="nome" placeholder="Seu nome completo" required>
-                    
-                    <label>E-mail *</label>
-                    <input type="email" id="email" placeholder="seu@email.com" required>
-                    
-                    <label>Telefone *</label>
-                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
-                    
-                    <label>Cidade/Estado *</label>
-                    <input type="text" id="cidade" placeholder="Fortaleza - CE" required>
-                </div>
-                
-                <!-- Formação -->
-                <div class="secao">
-                    <h3>🎓 Formação</h3>
-                    
-                    <label>Curso *</label>
-                    <input type="text" id="curso" placeholder="Ex: Ciência da Computação" required>
-                    
-                    <label>Semestre (opcional)</label>
-                    <input type="text" id="semestre" placeholder="Ex: 3º semestre">
-                </div>
-                
-                <!-- Objetivo e Habilidades -->
-                <div class="secao">
-                    <h3>🎯 Objetivo e Habilidades</h3>
-                    
-                    <label>Objetivo profissional *</label>
-                    <textarea id="objetivo" placeholder="Ex: Busco oportunidade na área de..." rows="3" required></textarea>
-                    
-                    <label>Habilidades *</label>
-                    <textarea id="habilidades" placeholder="Separe por vírgula...&#10;Ex: Excel, HTML, comunicação" rows="3" required></textarea>
-                </div>
-                
-                <!-- Extras -->
-                <div class="secao">
-                    <h3>📚 Cursos e Experiência</h3>
-                    
-                    <label>Cursos complementares</label>
-                    <textarea id="cursos" placeholder="Ex: Informática básica, Inglês..." rows="2"></textarea>
-                    
-                    <label>Experiência profissional</label>
-                    <textarea id="experiencia" placeholder="Se não tiver, deixe em branco..." rows="2"></textarea>
-                </div>
-                
-                <div class="botoes-form">
-                    <button type="button" class="botao botao-limpar" onclick="limparTudo()">
-                        Limpar
-                    </button>
-                    <button type="submit" class="botao botao-principal">
-                        Gerar Currículo
-                    </button>
-                </div>
-                
-            </form>
-        </div>
-        
-        <!-- Tela 3 - Resultado -->
-        <div id="telaResultado" class="tela">
-            <div class="cabecalho-resultado">
-                <h2>Currículo Pronto!</h2>
-            </div>
-            
-            <div id="curriculoGerado" class="curriculo-papel">
-                <!-- O currículo aparece aqui -->
-            </div>
-            
-            <div class="botoes-resultado">
-                <button class="botao botao-pdf" onclick="baixarPDF()">
-                    📥 Baixar PDF
-                </button>
-                <button class="botao botao-editar" onclick="editarDados()">
-                    ✏️ Editar
-                </button>
-                <button class="botao botao-novo" onclick="novoCurriculo()">
-                    🔄 Novo Currículo
-                </button>
-            </div>
-        </div>
-        
+
+        </footer>
+
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+    <!-- =========================
+         APP / EDITOR
+    ========================== -->
+
+    <div
+        id="app"
+        class="app hidden"
+    >
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-top">
+
+                <a href="#" class="sidebar-brand">
+                    <img
+                        src="assets/logo-mark.svg"
+                        alt="EasyCV"
+                    >
+
+                    <span>EasyCV</span>
+                </a>
+
+
+                <div class="progress-box">
+
+                    <div class="progress-label">
+
+                        <span>
+                            Progresso
+                        </span>
+
+                        <strong id="progressText">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-track">
+                        <div
+                            class="progress-bar"
+                            id="progressBar"
+                        ></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <nav class="step-navigation">
+
+                <button
+                    class="step-button active"
+                    data-step="1"
+                >
+                    <span class="step-icon">
+                        01
+                    </span>
+
+                    <span>
+                        Perfil
+                    </span>
+                </button>
+
+
+                <button
+                    class="step-button"
+                    data-step="2"
+                >
+                    <span class="step-icon">
+                        02
+                    </span>
+
+                    <span>
+                        Objetivo
+                    </span>
+                </button>
+
+
+                <button
+                    class="step-button"
+                    data-step="3"
+                >
+                    <span class="step-icon">
+                        03
+                    </span>
+
+                    <span>
+                        Formação
+                    </span>
+                </button>
+
+
+                <button
+                    class="step-button"
+                    data-step="4"
+                >
+                    <span class="step-icon">
+                        04
+                    </span>
+
+                    <span>
+                        Experiência
+                    </span>
+                </button>
+
+
+                <button
+                    class="step-button"
+                    data-step="5"
+                >
+                    <span class="step-icon">
+                        05
+                    </span>
+
+                    <span>
+                        Habilidades
+                    </span>
+                </button>
+
+
+                <button
+                    class="step-button"
+                    data-step="6"
+                >
+                    <span class="step-icon">
+                        06
+                    </span>
+
+                    <span>
+                        Finalizar
+                    </span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    class="new-resume-button"
+                    id="newResumeButton"
+                >
+                    + Novo currículo
+                </button>
+
+                <span class="save-status" id="saveStatus">
+                    Alterações salvas
+                </span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- EDITOR -->
+
+        <main class="editor">
+
+            <header class="editor-header">
+
+                <div>
+
+                    <button
+                        class="mobile-back"
+                        id="mobileBackButton"
+                    >
+                        ←
+                    </button>
+
+                    <span
+                        class="editor-eyebrow"
+                        id="stepEyebrow"
+                    >
+                        ETAPA 01
+                    </span>
+
+                    <h1 id="stepTitle">
+                        Seu perfil
+                    </h1>
+
+                    <p id="stepDescription">
+                        Vamos começar pelas suas informações básicas.
+                    </p>
+
+                </div>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        class="preview-mobile-button"
+                        id="mobilePreviewButton"
+                    >
+                        Ver prévia
+                    </button>
+
+                    <button
+                        class="exit-button"
+                        id="exitButton"
+                    >
+                        Sair
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- FORMS -->
+
+            <section class="form-area">
+
+                <!-- STEP 1 -->
+
+                <div
+                    class="form-step active"
+                    data-form-step="1"
+                >
+
+                    <div class="form-grid">
+
+                        <div class="field full">
+                            <label for="nome">
+                                Nome completo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                placeholder="Ex.: Lucas Reis"
+                                autocomplete="name"
+                            >
+                        </div>
+
+
+                        <div class="field">
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="voce@email.com"
+                                autocomplete="email"
+                            >
+                        </div>
+
+
+                        <div class="field">
+                            <label for="telefone">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                placeholder="(85) 99999-9999"
+                                autocomplete="tel"
+                            >
+                        </div>
+
+
+                        <div class="field full">
+                            <label for="cidade">
+                                Localização
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cidade"
+                                placeholder="Fortaleza — CE"
+                                autocomplete="address-level2"
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 2 -->
+
+                <div
+                    class="form-step"
+                    data-form-step="2"
+                >
+
+                    <div class="form-grid">
+
+                        <div class="field full">
+
+                            <label for="cargo">
+                                Cargo desejado
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cargo"
+                                placeholder="Ex.: Suporte Técnico"
+                            >
+
+                            <span class="field-help">
+                                Qual posição você está buscando?
+                            </span>
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label for="objetivo">
+                                Objetivo profissional
+                            </label>
+
+                            <textarea
+                                id="objetivo"
+                                rows="7"
+                                placeholder="Conte brevemente sobre seus objetivos profissionais..."
+                            ></textarea>
+
+                            <span class="field-help">
+                                Seja direto. Duas ou três frases são suficientes.
+                            </span>
+
+                        </div>
+
+
+                        <div class="suggestions">
+
+                            <span>
+                                Sugestões:
+                            </span>
+
+                            <button
+                                type="button"
+                                data-objective="Busco uma oportunidade para desenvolver minhas habilidades e crescer profissionalmente em uma equipe colaborativa."
+                            >
+                                Primeiro emprego
+                            </button>
+
+                            <button
+                                type="button"
+                                data-objective="Busco uma oportunidade de estágio para aplicar meus conhecimentos e desenvolver experiência profissional."
+                            >
+                                Estágio
+                            </button>
+
+                            <button
+                                type="button"
+                                data-objective="Busco uma oportunidade na área de Suporte Técnico, contribuindo com minhas habilidades e buscando evolução profissional."
+                            >
+                                Suporte de TI
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 3 -->
+
+                <div
+                    class="form-step"
+                    data-form-step="3"
+                >
+
+                    <div class="form-grid">
+
+                        <div class="field full">
+                            <label for="curso">
+                                Curso
+                            </label>
+
+                            <input
+                                type="text"
+                                id="curso"
+                                placeholder="Ex.: Análise e Desenvolvimento de Sistemas"
+                            >
+                        </div>
+
+
+                        <div class="field full">
+                            <label for="instituicao">
+                                Instituição
+                            </label>
+
+                            <input
+                                type="text"
+                                id="instituicao"
+                                placeholder="Ex.: Estácio"
+                            >
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="situacao">
+                                Situação
+                            </label>
+
+                            <select id="situacao">
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="Cursando">
+                                    Cursando
+                                </option>
+
+                                <option value="Concluído">
+                                    Concluído
+                                </option>
+
+                                <option value="Trancado">
+                                    Trancado
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="semestre">
+                                Semestre
+                            </label>
+
+                            <input
+                                type="text"
+                                id="semestre"
+                                placeholder="Ex.: 4º semestre"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 4 -->
+
+                <div
+                    class="form-step"
+                    data-form-step="4"
+                >
+
+                    <div class="experience-header">
+
+                        <div>
+                            <h3>
+                                Experiência profissional
+                            </h3>
+
+                            <p>
+                                Adicione experiências relevantes para sua candidatura.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="add-button"
+                            id="addExperienceButton"
+                        >
+                            + Adicionar
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="experienceList"
+                        class="experience-list"
+                    >
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 5 -->
+
+                <div
+                    class="form-step"
+                    data-form-step="5"
+                >
+
+                    <div class="field full">
+
+                        <label for="skillInput">
+                            Habilidades
+                        </label>
+
+                        <div class="skill-input-wrapper">
+
+                            <input
+                                type="text"
+                                id="skillInput"
+                                placeholder="Digite uma habilidade e pressione Enter"
+                            >
+
+                            <button
+                                type="button"
+                                id="addSkillButton"
+                            >
+                                Adicionar
+                            </button>
+
+                        </div>
+
+                        <span class="field-help">
+                            Ex.: Excel, JavaScript, Comunicação, Suporte Técnico.
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="skills-container"
+                        id="skillsContainer"
+                    >
+
+                    </div>
+
+
+                    <div class="field full courses-field">
+
+                        <label for="cursos">
+                            Cursos complementares
+                        </label>
+
+                        <textarea
+                            id="cursos"
+                            rows="5"
+                            placeholder="Ex.: Suporte de TI — IBM SkillsBuild&#10;Excel — Fundação Bradesco"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 6 -->
+
+                <div
+                    class="form-step"
+                    data-form-step="6"
+                >
+
+                    <div class="finish-card">
+
+                        <div class="finish-icon">
+                            ✓
+                        </div>
+
+                        <h2>
+                            Seu currículo está pronto.
+                        </h2>
+
+                        <p>
+                            Revise as informações na prévia ao lado.
+                            Quando estiver satisfeito, você poderá gerar
+                            seu currículo em PDF.
+                        </p>
+
+                        <div class="finish-actions">
+
+                            <button
+                                class="primary-button"
+                                id="printButton"
+                            >
+                                Baixar currículo
+                                <span>↓</span>
+                            </button>
+
+                            <button
+                                class="secondary-button"
+                                id="editButton"
+                            >
+                                Continuar editando
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+
+                <div class="form-navigation">
+
+                    <button
+                        class="back-button"
+                        id="backButton"
+                    >
+                        ← Voltar
+                    </button>
+
+                    <button
+                        class="continue-button"
+                        id="continueButton"
+                    >
+                        Continuar
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- PREVIEW -->
+
+        <aside class="preview-panel">
+
+            <div class="preview-header">
+
+                <div>
+                    <span>
+                        PRÉVIA
+                    </span>
+
+                    <strong>
+                        Seu currículo
+                    </strong>
+                </div>
+
+                <button
+                    id="closePreviewButton"
+                    class="close-preview"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="preview-wrapper">
+
+                <article
+                    class="resume-paper"
+                    id="resumePaper"
+                >
+
+                    <header class="resume-header">
+
+                        <h1 id="previewName">
+                            Seu Nome
+                        </h1>
+
+                        <p
+                            id="previewRole"
+                            class="resume-role"
+                        >
+                            Cargo desejado
+                        </p>
+
+
+                        <div class="resume-contact">
+
+                            <span id="previewEmail">
+                                email@email.com
+                            </span>
+
+                            <span
+                                class="contact-separator"
+                            >
+                                •
+                            </span>
+
+                            <span id="previewPhone">
+                                (00) 00000-0000
+                            </span>
+
+                            <span
+                                class="contact-separator"
+                            >
+                                •
+                            </span>
+
+                            <span id="previewCity">
+                                Cidade — UF
+                            </span>
+
+                        </div>
+
+                    </header>
+
+
+                    <section
+                        class="resume-section"
+                        id="previewObjectiveSection"
+                    >
+
+                        <h2>
+                            Perfil
+                        </h2>
+
+                        <p id="previewObjective">
+                            Seu objetivo profissional aparecerá aqui.
+                        </p>
+
+                    </section>
+
+
+                    <section
+                        class="resume-section"
+                        id="previewExperienceSection"
+                    >
+
+                        <h2>
+                            Experiência
+                        </h2>
+
+                        <div id="previewExperience">
+                            <p class="resume-empty">
+                                Suas experiências aparecerão aqui.
+                            </p>
+                        </div>
+
+                    </section>
+
+
+                    <section
+                        class="resume-section"
+                        id="previewEducationSection"
+                    >
+
+                        <h2>
+                            Formação
+                        </h2>
+
+                        <div id="previewEducation">
+
+                            <p class="resume-empty">
+                                Sua formação aparecerá aqui.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <section
+                        class="resume-section"
+                        id="previewSkillsSection"
+                    >
+
+                        <h2>
+                            Habilidades
+                        </h2>
+
+                        <div
+                            class="resume-skills"
+                            id="previewSkills"
+                        >
+
+                            <span class="resume-empty">
+                                Suas habilidades aparecerão aqui.
+                            </span>
+
+                        </div>
+
+                    </section>
+
+
+                    <section
+                        class="resume-section"
+                        id="previewCoursesSection"
+                    >
+
+                        <h2>
+                            Cursos complementares
+                        </h2>
+
+                        <p id="previewCourses">
+                            Seus cursos aparecerão aqui.
+                        </p>
+
+                    </section>
+
+                </article>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        <span>✓</span>
+        <p></p>
+    </div>
+
+
     <script src="script.js"></script>
+
 </body>
 </html>

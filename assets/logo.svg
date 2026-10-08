@@ -1,0 +1,25 @@
+<svg width="220" height="56" viewBox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>EasyCV</title>
+
+  <!-- Ícone -->
+  <g>
+    <!-- Documento -->
+    <path d="M12 7.5C12 5.567 13.567 4 15.5 4H32L42 14V40.5C42 42.433 40.433 44 38.5 44H15.5C13.567 44 12 42.433 12 40.5V7.5Z" fill="#171717"></path>
+
+    <!-- Dobra do documento -->
+    <path d="M32 4V11C32 12.657 33.343 14 35 14H42" fill="#6C5CE7"></path>
+
+    <!-- Linha de currículo -->
+    <path d="M18.5 20H35.5" stroke="#F7F7F5" stroke-width="2.5" stroke-linecap="round"></path>
+
+    <path d="M18.5 27H35.5" stroke="#F7F7F5" stroke-width="2.5" stroke-linecap="round"></path>
+
+    <!-- Check -->
+    <path d="M19 34L23 38L35 30" stroke="#6C5CE7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="55" y="37" fill="#171717" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="750" letter-spacing="-1.4">
+    Easy<tspan fill="#6C5CE7">CV</tspan>
+  </text>
+</svg>
