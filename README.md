@@ -1,42 +1,25 @@
-# Currículo Fácil
+# EasyCV
 
-Projeto de extensão universitária pra ajudar quem precisa criar currículo rápido e sem complicação.
+Criador de currículos responsivo em português (Brasil), feito com HTML, CSS e JavaScript puro.
 
-## Do que se trata
+## Executar
+Abra `index.html` no navegador. Não precisa instalar dependências nem compilar, e o projeto pode ser publicado como site estático (por exemplo, Vercel por upload/drag-and-drop).
 
-É um site simples onde a pessoa preenche um formulário com seus dados e o sistema gera um currículo profissional em PDF. Fiz pensando em quem tá começando e não tem experiência, então o foco é ser fácil de usar.
+## Recursos
+- Editor guiado em 6 etapas com prévia do currículo em tempo real.
+- Salvamento automático no navegador.
+- Exportação para impressão/PDF usando a janela de impressão do navegador.
+- Exportação e importação de backup JSON para transportar os dados entre dispositivos.
+- Tema claro/escuro com preferência salva localmente.
+- Layout responsivo para celular e desktop.
 
-## Por que fiz isso
+## Privacidade
+Os dados do currículo ficam no armazenamento local do navegador. O projeto não envia os dados para um servidor nem usa autenticação remota por padrão. Limpar os dados do navegador pode apagar o currículo; use **Exportar backup** para guardar uma cópia.
 
-Precisava de um projeto pra atividade de extensão da faculdade e percebi que muita gente do meu círculo não sabia fazer currículo. A ideia foi criar algo que funcionasse bem no celular, já que é o que a maioria usa.
+## Supabase
+A integração com Supabase não foi ativada neste pacote porque não havia configuração de projeto associada ao código. Para habilitar sincronização entre dispositivos, configure um projeto explicitamente, crie tabelas com RLS e use apenas a chave publishable no frontend — nunca exponha uma chave `service_role`/secret.
 
-## Como usar
 
-Acessa o site, preenche os campos e clica em gerar. Depois é só baixar o PDF. Funciona em qualquer navegador, mas testei mais no Chrome do Android.
+## Layout do currículo
 
-Site: https://curriculo-facil.netlify.app/
-
-## O que usei
-
-HTML, CSS e JavaScript puro. Pro PDF usei uma biblioteca chamada html2pdf.
-
-## O que falta
-
-- Mais modelos de currículo
-- Salvar os dados pra não perder se fechar
-- Modo escuro
-- Opção de exportar Word
-
-## Bugs
-
-Às vezes o PDF demora em celular mais antigo. E a máscara do telefone dá uma bugada com DDD que começa com zero.
-
-## Quem fez
-
-Lucas Reis - estudante de ADS.
-
-GitHub: https://github.com/LucasReisD
-
----
-
-Projeto feito pra faculdade, mas se alguém quiser usar ou melhorar, fica à vontade.
+A prévia usa um modelo profissional de uma coluna inspirado no currículo de referência: cabeçalho centralizado, títulos de seção azul-marinho, linhas divisórias discretas e ordem Objetivo, Formação, Experiência, Cursos, Competências e Idiomas. Os dados continuam sendo preenchidos pelo usuário no editor; nenhum dado pessoal do documento de referência foi pré-carregado.

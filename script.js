@@ -175,7 +175,8 @@ const inputIds = [
     "instituicao",
     "situacao",
     "semestre",
-    "cursos"
+    "cursos",
+    "idiomas"
 ];
 
 
@@ -188,6 +189,8 @@ document.addEventListener("DOMContentLoaded", () => {
     loadData();
 
     setupEvents();
+
+    setupQualityOfLifeTools();
 
     renderExperiences();
 
@@ -414,7 +417,7 @@ function createNewResume() {
         return;
     }
 
-    localStorage.removeItem(STORAGE_KEY);
+    try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
 
     inputIds.forEach(id => {
 
@@ -560,10 +563,7 @@ function goToStep(step) {
 
 function updateProgress() {
 
-    const progress =
-        Math.round(
-            ((currentStep - 1) / 5) * 100
-        );
+    const progress = Math.round((currentStep / 6) * 100);
 
     progressText.textContent =
         `${progress}%`;
@@ -623,13 +623,15 @@ function saveData() {
     const data =
         getCurrentData();
 
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(data)
-    );
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch (error) {
+        console.error("Não foi possível salvar localmente:", error);
+        if (saveStatus) saveStatus.textContent = "Falha ao salvar";
+        return;
+    }
 
-    saveStatus.textContent =
-        "Salvando...";
+    saveStatus.textContent = "Salvando...";
 
     clearTimeout(
         window.saveTimer
@@ -652,14 +654,15 @@ function saveData() {
 
 function loadData() {
 
-    const stored =
-        localStorage.getItem(
-            STORAGE_KEY
-        );
-
-    if (!stored) {
+    let stored;
+    try {
+        stored = localStorage.getItem(STORAGE_KEY);
+    } catch (error) {
+        console.warn("Armazenamento local indisponível:", error);
         return;
     }
+
+    if (!stored) return;
 
     try {
 
@@ -1086,6 +1089,9 @@ function updatePreview() {
         data.cursos ||
         "Seus cursos aparecerão aqui.";
 
+    document.getElementById("previewLanguages").textContent =
+        data.idiomas || "Seus idiomas aparecerão aqui.";
+
 }
 
 
@@ -1414,6 +1420,106 @@ function escapeHtml(value) {
 
 }
 
+
+/* =========================================================
+   QUALITY-OF-LIFE: THEME + BACKUP
+========================================================= */
+
+function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    const button = document.getElementById("themeToggleButton");
+    if (button) {
+        button.textContent = theme === "dark" ? "☀ Tema claro" : "☾ Tema escuro";
+        button.setAttribute("aria-pressed", String(theme === "dark"));
+    }
+    try { localStorage.setItem("easycv-theme", theme); } catch (_) {}
+}
+
+function toggleTheme() {
+    applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+}
+
+function exportBackup() {
+    const data = getCurrentData();
+    const blob = new Blob([JSON.stringify({ app: "EasyCV", version: 1, exportedAt: new Date().toISOString(), data }, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "meu-curriculo-easycv.json";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    showToast("Backup do currículo exportado.");
+}
+
+function importBackup(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+        try {
+            const parsed = JSON.parse(String(reader.result || ""));
+            const data = parsed.data || parsed;
+            inputIds.forEach(id => {
+                const input = document.getElementById(id);
+                if (input && typeof data[id] === "string") input.value = data[id];
+            });
+            experiences = Array.isArray(data.experiences) ? data.experiences : [];
+            skills = Array.isArray(data.skills) ? data.skills.filter(x => typeof x === "string") : [];
+            renderExperiences();
+            renderSkills();
+            saveData();
+            updatePreview();
+            showToast("Backup importado com sucesso.");
+        } catch (error) {
+            showToast("Arquivo inválido. Selecione um backup EasyCV.");
+        }
+    };
+    reader.readAsText(file);
+}
+
+function setupQualityOfLifeTools() {
+    const actions = document.querySelector(".editor-actions");
+    if (actions && !document.getElementById("themeToggleButton")) {
+        const button = document.createElement("button");
+        button.id = "themeToggleButton";
+        button.type = "button";
+        button.className = "exit-button theme-toggle";
+        button.addEventListener("click", toggleTheme);
+        actions.prepend(button);
+    }
+
+    const bottom = document.querySelector(".sidebar-bottom");
+    if (bottom && !document.getElementById("backupButton")) {
+        const backup = document.createElement("button");
+        backup.id = "backupButton";
+        backup.type = "button";
+        backup.className = "new-resume-button";
+        backup.textContent = "↓ Exportar backup";
+        backup.addEventListener("click", exportBackup);
+
+        const importButton = document.createElement("button");
+        importButton.type = "button";
+        importButton.className = "new-resume-button";
+        importButton.textContent = "↑ Importar backup";
+        importButton.addEventListener("click", () => document.getElementById("backupFileInput").click());
+
+        const fileInput = document.createElement("input");
+        fileInput.id = "backupFileInput";
+        fileInput.type = "file";
+        fileInput.accept = "application/json,.json";
+        fileInput.hidden = true;
+        fileInput.addEventListener("change", event => {
+            importBackup(event.target.files && event.target.files[0]);
+            event.target.value = "";
+        });
+        bottom.prepend(importButton, backup, fileInput);
+    }
+
+    let theme = "light";
+    try { theme = localStorage.getItem("easycv-theme") || "light"; } catch (_) {}
+    applyTheme(theme);
+}
 
 /* =========================================================
    GLOBAL FUNCTIONS

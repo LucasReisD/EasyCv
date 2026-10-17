@@ -1414,84 +1414,61 @@ img {
 .resume-paper {
     width: 210mm;
     min-width: 210mm;
-
     min-height: 297mm;
-
-    padding: 22mm 18mm;
-
-    background: white;
-
+    padding: 17mm 15mm;
+    background: #fff;
     box-shadow: var(--shadow-paper);
-
     color: #202020;
-
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 9pt;
-
-    line-height: 1.5;
+    line-height: 1.34;
 }
 
+/* Layout inspired by the user's reference CV: clean, single-column, navy headings. */
 .resume-header {
-    padding-bottom: 18px;
-
-    border-bottom: 2px solid #202020;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #294a7b;
+    text-align: center;
 }
 
 .resume-header h1 {
     margin: 0;
-
-    font-size: 27px;
-
-    line-height: 1.1;
-
+    color: #294a7b;
+    font-size: 21px;
+    line-height: 1.15;
     font-weight: 800;
-
-    letter-spacing: -.5px;
-
+    letter-spacing: -.25px;
     text-transform: uppercase;
 }
 
 .resume-role {
-    margin: 5px 0 9px;
-
-    color: #555;
-
-    font-size: 11px;
-
-    font-weight: 600;
+    margin: 4px 0 5px;
+    color: #444;
+    font-size: 10px;
+    font-weight: 500;
 }
 
 .resume-contact {
     display: flex;
     flex-wrap: wrap;
-
-    gap: 6px;
-
-    color: #666;
-
+    justify-content: center;
+    gap: 5px;
+    color: #444;
     font-size: 8px;
 }
 
 .resume-section {
-    margin-top: 20px;
+    margin-top: 13px;
 }
 
 .resume-section h2 {
-    margin: 0 0 9px;
-
-    padding-bottom: 4px;
-
-    border-bottom: 1px solid #D7D7D7;
-
-    color: #222;
-
-    font-size: 9px;
-
+    margin: 0 0 6px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #294a7b;
+    color: #294a7b;
+    font-size: 9.5px;
     font-weight: 800;
-
-    letter-spacing: .08em;
-
+    letter-spacing: 0;
     text-transform: uppercase;
 }
 
@@ -1585,20 +1562,18 @@ img {
     display: flex;
     flex-wrap: wrap;
 
-    gap: 6px;
+    gap: 4px 12px;
 }
 
 .resume-skill {
-    padding: 4px 7px;
-
-    border: 1px solid #D8D8D8;
-
-    border-radius: 4px;
-
-    color: #444;
-
-    font-size: 7.5px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    color: #333;
+    font-size: 8px;
 }
+
+.resume-skill::before { content: "• "; color: #294a7b; }
 
 
 /* =========================================================
@@ -1965,46 +1940,402 @@ img {
 }
 
 
+
+/* =========================================================
+   TEMA ESCURO — respeita a identidade visual original
+========================================================= */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --primary: #9B8CFF;
+    --primary-hover: #B0A5FF;
+    --primary-soft: #292442;
+    --background: #111318;
+    --surface: #191C23;
+    --surface-soft: #232731;
+    --text: #F2F3F7;
+    --text-secondary: #C0C4CE;
+    --text-muted: #9298A6;
+    --border: #303541;
+    --border-hover: #444B5B;
+    --success: #62D6A0;
+    --success-soft: #203A31;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.18);
+    --shadow-md: 0 10px 30px rgba(0,0,0,.24);
+}
+:root[data-theme="dark"] .site-header,
+:root[data-theme="dark"] .editor-header,
+:root[data-theme="dark"] .sidebar,
+:root[data-theme="dark"] .info-card,
+:root[data-theme="dark"] .preview-panel,
+:root[data-theme="dark"] .form-area,
+:root[data-theme="dark"] .experience-card,
+:root[data-theme="dark"] .finish-card {
+    background-color: var(--surface);
+}
+:root[data-theme="dark"] .editor-header,
+:root[data-theme="dark"] .site-header {
+    background-color: var(--surface);
+}
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] .secondary-button,
+:root[data-theme="dark"] .exit-button,
+:root[data-theme="dark"] .new-resume-button {
+    background-color: var(--surface-soft);
+    color: var(--text);
+    border-color: var(--border);
+}
+:root[data-theme="dark"] .hero,
+:root[data-theme="dark"] #landingPage {
+    background-color: var(--background);
+}
+:root[data-theme="dark"] .resume-paper {
+    color: #20232A;
+    background: #FFFFFF;
+}
+:root[data-theme="dark"] .primary-button {
+    color: #171522;
+}
+.theme-toggle {
+    white-space: nowrap;
+}
+@media (max-width: 1050px) {
+    .theme-toggle { display: none; }
+}
+
 /* =========================================================
    PRINT
 ========================================================= */
 
 @media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
 
+    html,
     body {
-        background: white;
+        display: block !important;
+        width: 210mm !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #fff !important;
+    }
+
+    /* Keep the app shell from contributing a blank page before the CV. */
+    .app {
+        display: block !important;
+        position: static !important;
+        width: 210mm !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        transform: none !important;
+        background: #fff !important;
     }
 
     body * {
-        visibility: hidden;
+        visibility: hidden !important;
+    }
+
+    .preview-panel,
+    .preview-wrapper {
+        display: block !important;
+        position: static !important;
+        inset: auto !important;
+        width: 210mm !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        transform: none !important;
+        border: 0 !important;
+        background: #fff !important;
     }
 
     .resume-paper,
     .resume-paper * {
-        visibility: visible;
+        visibility: visible !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .resume-paper {
-        position: absolute;
-
-        left: 0;
-        top: 0;
-
-        width: 210mm;
-        min-width: 210mm;
-
-        min-height: 297mm;
-
-        margin: 0;
-
-        padding: 22mm 18mm;
-
-        box-shadow: none;
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 210mm !important;
+        min-width: 0 !important;
+        max-width: 210mm !important;
+        min-height: 297mm !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 13mm 14mm !important;
+        overflow: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #202020 !important;
+        opacity: 1 !important;
+        page-break-before: avoid !important;
+        page-break-after: avoid !important;
+        break-before: avoid-page !important;
+        break-after: avoid-page !important;
     }
 
-    @page {
-        size: A4;
-        margin: 0;
+    .preview-header,
+    .close-preview,
+    .sidebar,
+    .editor-panel,
+    .site-header,
+    .site-footer,
+    .toast,
+    .modal,
+    button {
+        display: none !important;
     }
 
+    /* Avoid splitting individual CV sections across pages. */
+    .resume-header,
+    .resume-section,
+    .resume-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================================
+   EASYCV — MODELO PROFISSIONAL AZUL / BRANCO
+   Aplicado a todos os currículos criados no editor.
+========================================================= */
+.resume-paper {
+    position: relative;
+    box-sizing: border-box;
+    width: 210mm;
+    min-width: 210mm;
+    min-height: 297mm;
+    padding: 15mm 14mm 16mm 14mm;
+    overflow: hidden;
+    background: #fff;
+    color: #183653;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    line-height: 1.42;
+    box-shadow: 0 12px 32px rgba(12, 37, 65, .16);
+}
+.resume-paper::before,
+.resume-paper::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 42mm;
+    height: 4mm;
+    background: #123b68;
+    pointer-events: none;
+}
+.resume-paper::before {
+    top: 8mm;
+    left: -12mm;
+    transform: rotate(-45deg);
+    box-shadow: 0 3mm 0 #2474b8;
+}
+.resume-paper::after {
+    right: -12mm;
+    bottom: 8mm;
+    transform: rotate(-45deg);
+    box-shadow: 0 3mm 0 #2474b8;
+}
+.resume-header {
+    position: relative;
+    z-index: 1;
+    padding: 0 3mm 7mm;
+    margin-bottom: 6mm;
+    border-bottom: 1.5px solid #246ba5;
+    text-align: center;
+}
+.resume-header h1 {
+    margin: 0;
+    color: #173b60;
+    font-size: 21pt;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -.35px;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+.resume-role {
+    margin: 2mm 0 4mm;
+    color: #28689c;
+    font-size: 10pt;
+    line-height: 1.3;
+    font-weight: 600;
+}
+.resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2mm;
+    row-gap: 1.5mm;
+    color: #36536d;
+    font-size: 8pt;
+    overflow-wrap: anywhere;
+}
+.contact-separator { color: #2878b8; font-weight: 700; }
+.resume-section {
+    margin-top: 5mm;
+    break-inside: auto;
+    page-break-inside: auto;
+}
+.resume-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin: 0 0 2.5mm;
+    padding: 0;
+    border: 0;
+    color: #1765a2;
+    font-size: 10.5pt;
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: .15px;
+    text-transform: uppercase;
+}
+.resume-section h2::before {
+    display: inline-flex;
+    flex: 0 0 9mm;
+    width: 9mm;
+    height: 9mm;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #173f6b;
+    color: #fff;
+    font-size: 12pt;
+    line-height: 1;
+    content: "•";
+}
+.resume-section h2::after {
+    content: "";
+    flex: 1 1 auto;
+    min-width: 5mm;
+    height: 1px;
+    margin-top: 1mm;
+    background: #2c78b4;
+}
+#previewObjectiveSection h2::before { content: "◎"; }
+#previewEducationSection h2::before { content: "◆"; font-size: 10pt; }
+#previewExperienceSection h2::before { content: "▣"; font-size: 10pt; }
+#previewCoursesSection h2::before { content: "▤"; font-size: 12pt; }
+#previewSkillsSection h2::before { content: "⚙"; font-size: 11pt; }
+#previewLanguagesSection h2::before { content: "◎"; font-size: 12pt; }
+.resume-section p,
+.resume-section li,
+.resume-section .resume-item,
+.resume-section .resume-experience,
+.resume-section .resume-education {
+    color: #29455e;
+    font-size: 8.7pt;
+    line-height: 1.48;
+}
+.resume-section p { margin: 0; }
+.resume-empty { color: #7b8c9c !important; font-style: italic; }
+.resume-experience { margin-bottom: 4mm; }
+.resume-experience:last-child { margin-bottom: 0; }
+.resume-experience-head,
+.resume-education-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4mm;
+}
+.resume-experience strong,
+.resume-education strong { color: #173f6b; }
+.resume-skills { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+.resume-skills span:not(.resume-empty) {
+    display: inline-block;
+    padding: 1mm 2.5mm;
+    border: 1px solid #d2e2f0;
+    border-radius: 3mm;
+    background: #f2f7fb;
+    color: #244b70;
+    font-size: 8pt;
+}
+@media screen and (max-width: 700px) {
+    .resume-paper { transform-origin: top left; }
+}
+@media print {
+    @page { size: A4 portrait; margin: 0; }
+    html, body {
+        display: block !important;
+        width: 210mm !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #fff !important;
+    }
+    body * { visibility: hidden !important; }
+    .app, .preview-panel, .preview-wrapper {
+        display: block !important;
+        position: static !important;
+        inset: auto !important;
+        width: 210mm !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        transform: none !important;
+        border: 0 !important;
+        background: #fff !important;
+    }
+    .resume-paper, .resume-paper * {
+        visibility: visible !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .resume-paper {
+        display: block !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 210mm !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        min-height: 297mm !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 15mm 14mm 16mm !important;
+        overflow: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #183653 !important;
+        opacity: 1 !important;
+        break-before: avoid-page !important;
+        page-break-before: avoid !important;
+    }
+    .preview-header, .close-preview, .sidebar, .editor-panel,
+    .site-header, .site-footer, .toast, .modal, button { display: none !important; }
+    .resume-header, .resume-item, .resume-experience-head, .resume-education-head { break-inside: avoid; page-break-inside: avoid; }
+    .resume-section { break-inside: auto; page-break-inside: auto; }
 }
